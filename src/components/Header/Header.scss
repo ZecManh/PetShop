@@ -1,0 +1,56 @@
+$tablet-width: 768px;
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+.header {
+  background-color: #00274a;
+  color: #d9f1ff;
+  .start-header {
+    img {
+      object-fit: contain;
+    }
+  }
+  .mid-header {
+    @include tablet {
+      display: none;
+    }
+    li {
+      padding: 0 15px;
+      .css-icon {
+        margin-right: 10px;
+      }
+    }
+  }
+  .end-header {
+    @include tablet {
+      display: none;
+    }
+
+    li {
+      padding: 0 15px;
+    }
+  }
+  .menu {
+    @include tablet {
+      display: block;
+    }
+    display: none;
+  }
+}
+.mid-header-res {
+  @include desktop {
+    display: none;
+  }
+}
+.end-header-res {
+  @include desktop {
+    display: none;
+  }
+}
