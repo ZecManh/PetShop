@@ -43,8 +43,10 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon className="css-icon" icon={faCat} />
-            <NavLink to="/cat">Cat</NavLink>
+            <NavLink to="/cat">
+              <FontAwesomeIcon className="css-icon" icon={faCat} />
+              Cat
+            </NavLink>
           </li>
         </ul>
         <ul className="end-header flex">
@@ -74,19 +76,20 @@ function Header() {
             style={{ background: "#00274a", color: "#d9f1ff" }}
           >
             <li className="pe-3">
-              <FontAwesomeIcon className="mr-3" icon={faShop} />
-              <a href="#">Shop</a>
+              <NavLink to="/shop">
+                <FontAwesomeIcon className="css-icon" icon={faShop} />
+                Shop
+              </NavLink>
             </li>
+            <NavLink to="/dog">
+              <FontAwesomeIcon className="css-icon" icon={faDog} />
+              Dog
+            </NavLink>
             <li>
-              <FontAwesomeIcon className="mr-3" icon={faDog} />
-              <a href="#">Dog</a>
-            </li>
-            <li>
-              <FontAwesomeIcon className="mr-3" icon={faCat} />
-              <a href="#">Cat</a>
-            </li>
-            <li>
-              <a href="#"></a>
+              <NavLink to="/cat">
+                <FontAwesomeIcon className="css-icon" icon={faCat} />
+                Cat
+              </NavLink>
             </li>
           </ul>
           <ul
