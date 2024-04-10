@@ -15,11 +15,21 @@ $tablet-width: 1390px;
   @include tablet {
     flex-direction: column;
   }
+  @include tablet {
+    .section-2:hover {
+      transform: translate(0px);
+    }
+  }
   .section-2 {
     position: relative;
+    height: 100%;
     @include tablet {
-      .section-2:hover {
-        transform: translate(0px);
+      .img-section2 {
+        img {
+          width: 100%;
+          height: 300px;
+          min-height: 372px;
+        }
       }
     }
     .img-section2 {
