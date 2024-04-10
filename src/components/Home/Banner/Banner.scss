@@ -1,0 +1,61 @@
+$tablet-width: 1390px;
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+.section-1 {
+  position: relative;
+
+  .img-section1 {
+    .banner-img-tablet {
+      display: none;
+    }
+    @include tablet {
+      .banner-img {
+        display: none;
+      }
+      .banner-img-tablet {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .content-section1 {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+
+    h2 {
+      font-family: "Quicksand", Sans-serif;
+      color: #cff1ff;
+      font-size: 40px;
+      word-wrap: break-word;
+    }
+    @include tablet {
+      top: 86%;
+      left: 10%;
+      .button-shop-now {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        padding-top: 30px;
+        font-size: 20px !important;
+      }
+      a {
+        font-size: 10px !important;
+        color: black;
+      }
+      .button-shop-now {
+        text-align: center;
+      }
+    }
+  }
+}

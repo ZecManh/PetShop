@@ -21,9 +21,15 @@ function Header() {
   };
   return (
     <>
-      <div className="header flex justify-between items-center p-10">
+      <div className="header flex justify-between items-center p-10 ">
         <div className="start-header ">
-          <img src="../src/assets/icon.png" style={{ width: "100px" }} alt="" />
+          <NavLink to="/">
+            <img
+              src="../src/assets/icon.png"
+              style={{ width: "100px" }}
+              alt=""
+            />
+          </NavLink>
         </div>
         <div className="menu" onClick={columnFlex}>
           <FontAwesomeIcon className="menu-bar" icon={faBars} />
@@ -77,17 +83,17 @@ function Header() {
           >
             <li className="pe-3">
               <NavLink to="/shop">
-                <FontAwesomeIcon className="css-icon" icon={faShop} />
+                <FontAwesomeIcon className="me-3" icon={faShop} />
                 Shop
               </NavLink>
             </li>
             <NavLink to="/dog">
-              <FontAwesomeIcon className="css-icon" icon={faDog} />
+              <FontAwesomeIcon className="me-3" icon={faDog} />
               Dog
             </NavLink>
             <li>
               <NavLink to="/cat">
-                <FontAwesomeIcon className="css-icon" icon={faCat} />
+                <FontAwesomeIcon className="me-3" icon={faCat} />
                 Cat
               </NavLink>
             </li>

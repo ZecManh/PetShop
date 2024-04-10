@@ -1,0 +1,46 @@
+$tablet-width: 1390px;
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+.list {
+  min-height: 360px;
+  @include tablet {
+    flex-direction: column;
+  }
+  .section-2 {
+    position: relative;
+    @include tablet {
+      .section-2:hover {
+        transform: translate(0px);
+      }
+    }
+    .img-section2 {
+      img {
+        width: 100%;
+      }
+    }
+    .content-section2 {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      @include tablet {
+        top: 40%;
+        right: 10%;
+      }
+      h2 {
+        font-family: "Quicksand", Sans-serif;
+        color: #cff1ff;
+        font-size: 15px;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
