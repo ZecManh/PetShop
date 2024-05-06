@@ -12,7 +12,8 @@ $tablet-width: 1390px;
 }
 .section-1 {
   position: relative;
-
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
   .img-section1 {
     .banner-img-tablet {
       display: none;
@@ -55,6 +56,8 @@ $tablet-width: 1390px;
       }
       .button-shop-now {
         text-align: center;
+        font-family: "Outfit", sans-serif;
+        font-weight: 400;
       }
     }
   }

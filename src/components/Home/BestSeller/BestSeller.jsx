@@ -1,61 +1,35 @@
 import { Tabs } from "antd";
 import "./BestSeller.scss";
+import axios from "axios";
+import { useState, useEffect } from "react";
 function BestSeller() {
-  const listProduct = [
-    {
-      src: "../src/assets/list1.jpg",
-      name: "Zesty Paws Itch Soother Dog Shampoo",
-      introduce:
-        "That’s where Zesty Paws Itch-Soother Dog Shampoo features gentle and effective ingredients that will make your pet’s bath time a breeze.",
-      price: "$45.00",
-    },
-    {
-      src: "../src/assets/list2.jpg",
-      name: "Zesty Paws Itch Soother Dog Shampoo",
-      introduce:
-        "That’s where Zesty Paws Itch-Soother Dog Shampoo features gentle and effective ingredients that will make your pet’s bath time a breeze.",
-      price: "$45.00",
-    },
-    {
-      src: "../src/assets/list3.jpg",
-      name: "Zesty Paws Itch Soother Dog Shampoo",
-      introduce:
-        "That’s where Zesty Paws Itch-Soother Dog Shampoo features gentle and effective ingredients that will make your pet’s bath time a breeze.",
-      price: "$45.00",
-    },
-    {
-      src: "../src/assets/list1.jpg",
-      name: "Zesty Paws Itch Soother Dog Shampoo",
-      introduce:
-        "That’s where Zesty Paws Itch-Soother Dog Shampoo features gentle and effective ingredients that will make your pet’s bath time a breeze.",
-      price: "$45.00",
-    },
-    {
-      src: "../src/assets/list2.jpg",
-      name: "Zesty Paws Itch Soother Dog Shampoo",
-      introduce:
-        "That’s where Zesty Paws Itch-Soother Dog Shampoo features gentle and effective ingredients that will make your pet’s bath time a breeze.",
-      price: "$45.00",
-    },
-    {
-      src: "../src/assets/list3.jpg",
-      name: "Zesty Paws Itch Soother Dog Shampoo",
-      introduce:
-        "That’s where Zesty Paws Itch-Soother Dog Shampoo features gentle and effective ingredients that will make your pet’s bath time a breeze.",
-      price: "$45.00",
-    },
-  ];
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    const fetchPets = async () => {
+      try {
+        const response = await axios.get(
+          "https://66339c0af7d50bbd9b4a0a42.mockapi.io/pet"
+        );
+        setPets(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchPets();
+  }, []);
   const Dog = () => {
     return (
       <>
-        <div className="dog-tab">
-          <div className="columns-3 ps-40 pe-40">
-            {listProduct.map((items) => (
-              <div className="mt-5" key={items.name}>
-                <img className="img-list w-full" src={items.src} alt="" />
+        <div className="container mx-auto dog-tab">
+          <div className="columns-3 ps-40 pe-40 pb-5">
+            {pets.map((items) => (
+              <div className="" key={items.id}>
+                <img className="img-list w-full" src={items.avatar} alt="" />
                 <h2>{items.name}</h2>
                 <p>{items.introduce}</p>
-                <a href="">GroomingWhole Hearted</a>
+                <a href="">{items.nameProduct}</a>
                 <div>
                   <span>{items.price}</span>
                 </div>
